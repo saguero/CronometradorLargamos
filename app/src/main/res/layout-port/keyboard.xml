@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.flexbox.FlexboxLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/keyboard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    app:alignItems="baseline"
+    app:justifyContent="space_between"
+    app:flexWrap="wrap"
+    app:flexDirection="column">
+
+    <Button
+        android:id="@+id/keyboard_n7"
+        android:layout_width="@dimen/number_width_port"
+        android:layout_height="wrap_content"
+        android:text="@string/number_7"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/number_size_port"
+        android:textStyle="bold"
+        android:background="@drawable/keyboard_background"
+        app:layout_flexBasisPercent="25%"/>
+
+    <Button
+        android:id="@+id/keyboard_n4"
+        android:layout_width="@dimen/number_width_port"
+        android:layout_height="wrap_content"
+        android:text="@string/number_4"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/number_size_port"
+        android:textStyle="bold"
+        android:background="@drawable/keyboard_background"
+        app:layout_flexBasisPercent="25%"/>
+
+    <Button
+        android:id="@+id/keyboard_n1"
+        android:layout_width="@dimen/number_width_port"
+        android:layout_height="wrap_content"
+        android:text="@string/number_1"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/number_size_port"
+        android:textStyle="bold"
+        android:background="@drawable/keyboard_background"
+        app:layout_flexBasisPercent="25%"/>
+
+    <Button
+        android:id="@+id/keyboard_lock"
+        android:layout_width="@dimen/number_width_port"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_block"
+        android:text="@string/lock"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:tint="@android:color/white"
+        android:background="@color/key"
+        app:layout_flexBasisPercent="20%"/>
+
+    <!-- Fin primera columna -->
+
+    <Button
+        android:id="@+id/keyboard_n8"
+        android:layout_width="@dimen/number_width_port"
+        android:layout_height="wrap_content"
+        android:text="@string/number_8"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/number_size_port"
+        android:textStyle="bold"
+        android:background="@drawable/keyboard_background"
+        app:layout_flexBasisPercent="25%"/>
+
+    <Button
+        android:id="@+id/keyboard_n5"
+        android:layout_width="@dimen/number_width_port"
+        android:layout_height="wrap_content"
+        android:text="@string/number_5"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/number_size_port"
+        android:textStyle="bold"
+        android:background="@drawable/keyboard_background"
+        app:layout_flexBasisPercent="25%"/>
+
+    <Button
+        android:id="@+id/keyboard_n2"
+        android:layout_width="@dimen/number_width_port"
+        android:layout_height="wrap_content"
+        android:text="@string/number_2"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/number_size_port"
+        android:textStyle="bold"
+        android:background="@drawable/keyboard_background"
+        app:layout_flexBasisPercent="25%"/>
+
+    <Button
+        android:id="@+id/keyboard_n0"
+        android:layout_width="@dimen/number_width_port"
+        android:layout_height="wrap_content"
+        android:text="@string/number_0"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/number_size_port"
+        android:textStyle="bold"
+        android:background="@drawable/keyboard_background"
+        app:layout_flexBasisPercent="20%"/>
+
+    <!-- Fin segunda columna -->
+
+    <Button
+        android:id="@+id/keyboard_n9"
+        android:layout_width="@dimen/number_width_port"
+        android:layout_height="wrap_content"
+        android:text="@string/number_9"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/number_size_port"
+        android:textStyle="bold"
+        android:background="@drawable/keyboard_background"
+        app:layout_flexBasisPercent="25%"/>
+
+    <Button
+        android:id="@+id/keyboard_n6"
+        android:layout_width="@dimen/number_width_port"
+        android:layout_height="wrap_content"
+        android:text="@string/number_6"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/number_size_port"
+        android:textStyle="bold"
+        android:background="@drawable/keyboard_background"
+        app:layout_flexBasisPercent="25%"/>
+
+    <Button
+        android:id="@+id/keyboard_n3"
+        android:layout_width="@dimen/number_width_port"
+        android:layout_height="wrap_content"
+        android:text="@string/number_3"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/number_size_port"
+        android:textStyle="bold"
+        android:background="@drawable/keyboard_background"
+        app:layout_flexBasisPercent="25%"/>
+
+    <ImageButton
+        android:id="@+id/keyboard_error"
+        android:layout_width="@dimen/number_width_port"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_error"
+        android:background="@drawable/keyboard_background"
+        android:tint="@color/white"
+        app:layout_flexBasisPercent="20%" />
+
+    <!-- Fin tercera columna -->
+
+    <ImageButton
+        android:id="@+id/keyboard_supr"
+        android:layout_width="@dimen/number_width_port"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_supr"
+        android:background="@drawable/keyboard_background"
+        android:tint="@android:color/white"
+        app:layout_flexBasisPercent="25%" />
+
+    <ImageButton
+        android:id="@+id/keyboard_supr_all"
+        android:layout_width="@dimen/number_width_port"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_supr_all"
+        android:tint="@color/white"
+        android:background="@drawable/keyboard_background"
+        app:layout_flexBasisPercent="25%"/>
+
+    <Button
+        android:id="@+id/keyboard_enter"
+        android:layout_width="@dimen/number_width_port"
+        android:layout_height="wrap_content"
+        android:text="@string/enter"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:background="@drawable/keyboard_background"
+        android:tint="@android:color/white"
+        app:layout_flexBasisPercent="47%"/>
+
+</com.google.android.flexbox.FlexboxLayout>

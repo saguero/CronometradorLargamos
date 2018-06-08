@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/alert_dialog_estado_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:theme="@style/CustomDialogTheme">
+
+    <RadioGroup
+        android:id="@+id/alert_dialog_estados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        
+        <RadioButton
+            android:id="@+id/alert_dialog_estado_atleta_dns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/estado_dns"/>
+
+        <RadioButton
+            android:id="@+id/alert_dialog_estado_atleta_dnf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/estado_dnf"/>
+
+        <RadioButton
+            android:id="@+id/alert_dialog_estado_atleta_dq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/estado_dq"/>
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/alert_dialog_comentario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/alert_dialog_estados"
+        android:ems="10"
+        android:hint="Ingresar comentario..." />
+
+</RelativeLayout>

@@ -1,0 +1,23 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="number_size_port">30sp</dimen>
+    <dimen name="number_size_land">20sp</dimen>
+
+    <dimen name="number_width_land">90dp</dimen>
+    <dimen name="number_height_land">42dp</dimen>
+
+    <dimen name="number_width_port">90dp</dimen>
+    <dimen name="number_height_port">42dp</dimen>
+
+    <dimen name="margin_right_land">3dp</dimen>
+    <dimen name="margin_right_port">3dp</dimen>
+
+    <dimen name="summary_margin_land">5dp</dimen>
+    <dimen name="summary_margin_port">5dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+
+</resources>

@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Largamos</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="search">Búsqueda</string>
+
+    <string name="number_0">0</string>
+    <string name="number_1">1</string>
+    <string name="number_2">2</string>
+    <string name="number_3">3</string>
+    <string name="number_4">4</string>
+    <string name="number_5">5</string>
+    <string name="number_6">6</string>
+    <string name="number_7">7</string>
+    <string name="number_8">8</string>
+    <string name="number_9">9</string>
+
+    <string name="init_time">00:00:00.000</string>
+    <string name="cronometro_no_iniciado">Cronometro no iniciado</string>
+
+    <string name="enter">Enter</string>
+    <string name="lock">Num Lock</string>
+    <string name="arribos">Arribos</string>
+    <string name="sin_arribos">Sin arribos</string>
+    <string name="insertar">Insertar</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="tab_name_1">Cronometro</string>
+    <string name="tab_name_2">Resumen</string>
+
+    <string name="titulo_estado_atleta">Seleccionar estado</string>
+    <string name="estado_atleta">Estados</string>
+    <string name="estado_dns">DNS</string>
+    <string name="estado_dnf">DNF</string>
+    <string name="estado_dq">DQ</string>
+
+    <string-array name="estados_atleta">
+        <item>DNS</item>
+        <item>DNF</item>
+        <item>DQ</item>
+    </string-array>
+
+    <string name="salir_app_titulo">Salir</string>
+    <string name="message_salir_app">¿Desea salir de la applicación?</string>
+
+
+</resources>
