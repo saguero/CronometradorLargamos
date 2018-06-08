@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height_teclado_dorsal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/teclado_cant_arribos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:text="@string/number_0"
+            android:textSize="@dimen/text_size_teclado_cant_arribos"
+            android:textColor="@color/black"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_arrow_upward"
+            android:drawableTint="@color/colorPrimary"
+            style="?android:attr/borderlessButtonStyle"/>
+
+        <EditText
+            android:id="@+id/teclado_input_dorsal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".7"
+            android:enabled="false"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_teclado_input_dorsal"
+            android:textColor="@color/black"
+            android:layout_gravity="bottom"
+            android:ems="5"
+            android:inputType="textPersonName" />
+
+        <ImageView
+            android:id="@+id/teclado_suprimir"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_teclado_suprimir"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:tint="@color/colorPrimary"
+            app:srcCompat="@drawable/ic_backspace" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_view">
+    </View>
+
+        <android.support.v7.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_teclado_numeros"
+            app:columnCount="3">
+
+            <Button
+                android:id="@+id/teclado_numero_1"
+                android:layout_height="@dimen/layout_height_teclado_numero"
+                android:text="@string/number_1"
+                android:textColor="@color/colorAccent"
+                app:layout_columnWeight="1"
+                android:textSize="@dimen/text_size_teclado_numero"
+                android:layout_margin="1dp"
+                android:textStyle="bold"
+                style="?android:attr/borderlessButtonStyle" />
+
+            <Button
+                android:id="@+id/teclado_numero_2"
+                android:layout_height="@dimen/layout_height_teclado_numero"
+                android:text="@string/number_2"
+                android:textColor="@color/colorAccent"
+                app:layout_columnWeight="1"
+                android:textSize="@dimen/text_size_teclado_numero"
+                android:textStyle="bold"
+                style="?android:attr/borderlessButtonStyle" />
+
+            <Button
+                android:id="@+id/teclado_numero_3"
+                android:layout_height="@dimen/layout_height_teclado_numero"
+                android:text="@string/number_3"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                app:layout_columnWeight="1"
+                android:textSize="@dimen/text_size_teclado_numero"
+                style="?android:attr/borderlessButtonStyle" />
+
+           <Button
+               android:id="@+id/teclado_numero_4"
+                android:layout_height="@dimen/layout_height_teclado_numero"
+                android:text="@string/number_4"
+                app:layout_columnWeight="1"
+                android:textSize="@dimen/text_size_teclado_numero"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                style="?android:attr/borderlessButtonStyle" />
+
+            <Button
+                android:id="@+id/teclado_numero_5"
+                android:layout_height="@dimen/layout_height_teclado_numero"
+                android:text="@string/number_5"
+                android:textColor="@color/colorAccent"
+                app:layout_columnWeight="1"
+                android:textSize="@dimen/text_size_teclado_numero"
+                android:textStyle="bold"
+                style="?android:attr/borderlessButtonStyle" />
+
+            <Button
+                android:id="@+id/teclado_numero_6"
+                android:layout_height="@dimen/layout_height_teclado_numero"
+                android:text="@string/number_6"
+                android:textColor="@color/colorAccent"
+                app:layout_columnWeight="1"
+                android:textSize="@dimen/text_size_teclado_numero"
+                android:textStyle="bold"
+                style="?android:attr/borderlessButtonStyle" />
+
+            <Button
+                android:id="@+id/teclado_numero_7"
+                android:layout_height="@dimen/layout_height_teclado_numero"
+                android:text="@string/number_7"
+                app:layout_columnWeight="1"
+                android:textSize="@dimen/text_size_teclado_numero"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                style="?android:attr/borderlessButtonStyle" />
+
+            <Button
+                android:id="@+id/teclado_numero_8"
+                android:layout_height="@dimen/layout_height_teclado_numero"
+                android:text="@string/number_8"
+                android:textColor="@color/colorAccent"
+                app:layout_columnWeight="1"
+                android:textSize="@dimen/text_size_teclado_numero"
+                android:textStyle="bold"
+                style="?android:attr/borderlessButtonStyle" />
+
+            <Button
+                android:id="@+id/teclado_numero_9"
+                android:layout_height="@dimen/layout_height_teclado_numero"
+                android:text="@string/number_9"
+                android:textColor="@color/colorAccent"
+                app:layout_columnWeight="1"
+                android:textSize="@dimen/text_size_teclado_numero"
+                android:textStyle="bold"
+                style="?android:attr/borderlessButtonStyle" />
+
+            <Button
+                android:layout_height="@dimen/layout_height_teclado_numero"
+                android:text=""
+                app:layout_columnWeight="1"
+                android:textSize="@dimen/text_size_teclado_numero"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                style="?android:attr/borderlessButtonStyle" />
+
+            <Button
+                android:id="@+id/teclado_numero_0"
+                android:layout_height="@dimen/layout_height_teclado_numero"
+                android:text="@string/number_0"
+                android:textColor="@color/colorAccent"
+                app:layout_columnWeight="1"
+                android:textSize="@dimen/text_size_teclado_numero"
+                android:textStyle="bold"
+                style="?android:attr/borderlessButtonStyle" />
+
+            <Button
+                android:layout_height="@dimen/layout_height_teclado_numero"
+                android:text=""
+                android:textColor="@color/colorAccent"
+                app:layout_columnWeight="1"
+                android:textSize="@dimen/text_size_teclado_numero"
+                android:textStyle="bold"
+                style="?android:attr/borderlessButtonStyle" />
+
+        </android.support.v7.widget.GridLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_view">
+
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height_teclado_acciones"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/teclado_estados"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_teclado_estado_atleta"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:drawableTop="@mipmap/ic_agregar_estado"
+            android:drawableTint="@color/darkGray"
+            android:text="@string/estado_atleta"
+            android:textSize="@dimen/text_size_teclado_label_estado_atleta"
+            android:textColor="@color/darkGray"
+            style="?android:attr/borderlessButtonStyle"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/teclado_ingresar_arribo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_teclado_ingresar_arribo"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:tint="@color/white"
+            android:scaleType="center"
+            app:backgroundTint="@color/colorPrimary"
+            app:fabSize="normal"
+            app:srcCompat="@mipmap/ic_enter_arribo" />
+
+        <Button
+            android:id="@+id/teclado_descartar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_teclado_descartar"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/ic_error"
+            android:drawableTint="@color/darkGray"
+            android:text="Descartar"
+            android:textSize="@dimen/text_size_teclado_label_descartar"
+            android:textColor="@color/darkGray"
+            style="?android:attr/borderlessButtonStyle"/>
+
+
+    </LinearLayout>
+</LinearLayout>

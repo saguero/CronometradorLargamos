@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tab's -->
+    <dimen name="appbar_padding_top_tab">8dp</dimen>
+
+    <!-- Tab Cronometro -->
+    <dimen name="layout_width_tabcrono_time">500dp</dimen>
+
+    <dimen name="layout_height_tabcrono_temporizador">53dp</dimen>
+    <dimen name="layout_height_tabcrono_inicidor">60dp</dimen>
+    <dimen name="layout_height_tabcrono_view">5dp</dimen>
+    <dimen name="layout_height_tabcrono_display">200dp</dimen>
+
+    <dimen name="text_size_tabcrono_time">45sp</dimen>
+
+    <dimen name="layout_margin_tabcrono_display">5dp</dimen>
+
+
+    <!-- Tab Resumen -->
+    <dimen name="layout_height_tabresumen_inicio">70dp</dimen>
+    <dimen name="layout_height_tabresumen_list">300dp</dimen>
+    <dimen name="layout_height_tabresumen_label_group">70dp</dimen>
+    <dimen name="layout_height_tabresumen_list_item">50dp</dimen>
+    <dimen name="layout_height_tabresumen_excel">75dp</dimen>
+
+    <dimen name="text_size_tabresumen_inicio">20sp</dimen>
+    <dimen name="text_size_tabresumen_arribos_cant">95sp</dimen>
+    <dimen name="text_size_tabresumen_arribos_label">20sp</dimen>
+    <dimen name="text_size_tabresumen_label_group">30sp</dimen>
+
+
+
+    <!-- Teclado -->
+    <dimen name="layout_height_teclado_suprimir">42dp</dimen>
+    <dimen name="layout_height_teclado_dorsal">70dp</dimen>
+    <dimen name="layout_height_teclado_numero">70dp</dimen>
+    <dimen name="layout_height_teclado_acciones">85dp</dimen>
+    <dimen name="layout_height_teclado_descartar">100dp</dimen>
+    <dimen name="layout_height_teclado_estado_atleta">100dp</dimen>
+    <dimen name="layout_height_teclado_ingresar_arribo">70dp</dimen>
+    <dimen name="layout_height_teclado_numeros">300dp</dimen>
+
+    <dimen name="text_size_teclado_cant_arribos">25sp</dimen>
+    <dimen name="text_size_teclado_label_estado_atleta">20sp</dimen>
+    <dimen name="text_size_teclado_label_descartar">20sp</dimen>
+    <dimen name="text_size_teclado_numero">30sp</dimen>
+    <dimen name="text_size_teclado_input_dorsal">30sp</dimen>
+
+</resources>

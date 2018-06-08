@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/AppTheme"
+    android:id="@+id/tab_cronometro"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/tab_crono_view1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight=".90"
+            android:background="@color/darkCyan"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/teal"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/tab_cronometro_temporizador"
+                    android:layout_width="@dimen/layout_width_tabcrono_time"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:inputType="time"
+                    android:text="@string/init_time"
+                    android:textSize="@dimen/text_size_tabcrono_time" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/tab_crono_iniciador"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/layout_height_tabcrono_inicidor"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:foregroundTint="@color/colorAccent"
+                    android:scaleType="fitCenter"
+                    android:tint="@color/white"
+                    app:backgroundTint="@color/colorAccent"
+                    app:fabSize="mini"
+                    app:layout_anchor="@id/tab_crono_view1"
+                    app:layout_anchorGravity="bottom|right|end"
+                    app:srcCompat="@mipmap/ic_timer" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/tab_crono_load_competencia"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/layout_height_tabcrono_inicidor"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:foregroundTint="@color/colorAccent"
+                    android:scaleType="fitCenter"
+                    android:tint="@color/white"
+                    app:backgroundTint="@color/dodgerBlue"
+                    app:fabSize="mini"
+                    app:layout_anchor="@id/tab_crono_view1"
+                    app:layout_anchorGravity="bottom|right|end"
+                    app:srcCompat="@android:drawable/ic_menu_upload" />
+
+            </LinearLayout>
+
+            <!-- Display -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_height_tabcrono_display"
+                android:layout_margin="@dimen/layout_margin_tabcrono_display"
+                android:background="@color/darkGray">
+
+                <ListView
+                    android:id="@+id/tab_crono_list_arribos"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/tab_crono_auxview"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_tabcrono_view"
+            android:background="@color/darkCyan">
+        </View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:orientation="horizontal">
+
+            <include
+                layout="@layout/teclado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></include>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tab_resumen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height_tabresumen_inicio">
+
+        <TextView
+            android:id="@+id/tab_resumen_inicio_temporizador"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/cronometro_no_iniciado"
+            android:textSize="@dimen/text_size_tabresumen_inicio"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_view">
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tab_resumen_cant_arribos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/number_0"
+            android:textSize="@dimen/text_size_tabresumen_arribos_cant"
+            android:textColor="@color/colorAccent"/>
+
+        <TextView
+            android:id="@+id/tab_resumen_label_arribos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/sin_arribos"
+            android:textSize="@dimen/text_size_tabresumen_arribos_label"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_view">
+    </View>
+
+    <android.support.v7.widget.SearchView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:queryHint="Buscar dorsal"/>
+
+    <ExpandableListView
+        android:id="@+id/tab_resumen_list"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height_tabresumen_list"
+        android:indicatorRight="?android:attr/expandableListPreferredItemIndicatorRight"
+        android:dividerHeight="1dp">
+    </ExpandableListView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/tab_resumen_excel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height_tabresumen_excel"
+        android:layout_gravity="end"
+        android:layout_margin="6dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:scaleType="center"
+        app:backgroundTint="@color/green"
+        app:fabSize="normal"
+        app:srcCompat="@mipmap/ic_excel" />
+
+</LinearLayout>
+
+<!--  android:indeterminateTintMode="src_atop" -->
