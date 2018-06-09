@@ -4,16 +4,20 @@
     <dimen name="appbar_padding_top_tab">8dp</dimen>
 
     <!-- Tab Cronometro -->
-    <dimen name="layout_width_tabcrono_time">500dp</dimen>
+    <dimen name="layout_width_tabcrono_time">460dp</dimen>
 
     <dimen name="layout_height_tabcrono_temporizador">53dp</dimen>
-    <dimen name="layout_height_tabcrono_inicidor">60dp</dimen>
     <dimen name="layout_height_tabcrono_view">5dp</dimen>
     <dimen name="layout_height_tabcrono_display">200dp</dimen>
+
+    <dimen name="layout_size_tabcrono_fab">55dp</dimen>
+    <dimen name="layout_margin_tab_crono_fab">5dp</dimen>
 
     <dimen name="text_size_tabcrono_time">45sp</dimen>
 
     <dimen name="layout_margin_tabcrono_display">5dp</dimen>
+
+
 
 
     <!-- Tab Resumen -->

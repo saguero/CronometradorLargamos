@@ -4,10 +4,12 @@ import android.content.Context;
 import android.os.AsyncTask;
 
 import java.io.File;
+import java.net.CacheRequest;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.function.Function;
 
 import silvana.com.manual.database.AppDatabase;
 import silvana.com.manual.database.Clasificacion;
@@ -37,6 +39,8 @@ public class Data {
 
     private Context context;
 
+    private CharSequence[] nombresCompetencias;
+
 
     /**
      * Default constructor to start activity on the first time
@@ -51,8 +55,7 @@ public class Data {
 
         atletasConEstadosEspeciales = new ArrayList<>();
 
-        loadClasificaciones();
-        insertCompetencia();
+        setupDB();
     }
 
 
@@ -117,7 +120,7 @@ public class Data {
     }
 
 
-    private void loadClasificaciones() {
+    private void setupDB() {
         new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
@@ -129,26 +132,21 @@ public class Data {
                         buckupDB.createNewFile();
                 }
                 catch(Exception ex) {}
-                arribos = ClasificacionMapper.INSTANCE.toListArriboAtleta(db.getClasificacionDao().findAll());
-                return null;
-            }
-        }.execute();
-    }
-
-    private void insertCompetencia() {
-        new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(Void... voids) {
-
-                if(db.getCompetenciaDao().countAll() == 0) {
-                    Competencia c = new Competencia();
-                    c.setNombre("Competencia por defecto");
-                    db.getCompetenciaDao().insert(c);
+                List<Competencia> comp = db.getCompetenciaDao().findAll();
+                CharSequence[] results = new CharSequence[comp.size()];
+                //Function<Competencia, String> map = comp -> {return comp.getNombre(); };
+                int index = 0;
+                for(Competencia c : comp){
+                    results[index] = c.getNombre();
+                    index = index + 1;
                 }
+                setNombresCompetencias(results);
+                //arribos = ClasificacionMapper.INSTANCE.toListArriboAtleta(db.getClasificacionDao().findAll());
                 return null;
             }
         }.execute();
     }
+
 
     private void insertClasificacion(Clasificacion c) {
         new AsyncTask<Void, Void, Void>() {
@@ -163,5 +161,31 @@ public class Data {
                 return null;
             }
         }.execute();
+    }
+
+    public void cargarNombresCompetencias(){
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                List<Competencia> comp = db.getCompetenciaDao().findAll();
+                CharSequence[] results = new CharSequence[comp.size()];
+                //Function<Competencia, String> map = comp -> {return comp.getNombre(); };
+                int index = 0;
+                for(Competencia c : comp){
+                    results[index] = c.getNombre();
+                    index = index + 1;
+                }
+                setNombresCompetencias(results);
+                return null;
+            }
+        }.execute();
+    }
+
+    public CharSequence[] getNombresCompetencias() {
+        return nombresCompetencias;
+    }
+
+    public void setNombresCompetencias(CharSequence[] nombresCompetencias) {
+        this.nombresCompetencias = nombresCompetencias;
     }
 }

@@ -26,6 +26,9 @@
     <string name="tab_name_1">Cronometro</string>
     <string name="tab_name_2">Resumen</string>
 
+
+    <string name="titulo_cargar_datos">Cargar datos</string>
+
     <string name="titulo_estado_atleta">Seleccionar estado</string>
     <string name="estado_atleta">Estados</string>
     <string name="estado_dns">DNS</string>

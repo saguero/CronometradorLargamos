@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import java.util.Date;
 import java.util.Optional;
@@ -36,6 +37,7 @@ public class TabCronometro extends Fragment {
 
     /* Componentes UI */
     private FloatingActionButton iniciadorCronometro;
+    private FloatingActionButton cargarDatos;
     private EditText inicioTemporizador;
     private ListView listaArribos;
     private Button cantidadArribos;
@@ -61,7 +63,6 @@ public class TabCronometro extends Fragment {
     private View viewAlertDialogEstadoAtleta;
     private RadioGroup grupoEstadoAtleta;
     private EditText comentarioEstadoAtleta;
-    private int estadoAtletaSeleccionado;
 
     /* */
     private Data data;
@@ -114,39 +115,40 @@ public class TabCronometro extends Fragment {
 
     private void activate(View v) {
 
-        inicioTemporizador = (EditText) v.findViewById(R.id.tab_cronometro_temporizador);
+        inicioTemporizador =  v.findViewById(R.id.tab_cronometro_temporizador);
         inicioTemporizador.setShowSoftInputOnFocus(false);
         inicioTemporizador.setInputType(InputType.TYPE_NULL);
         inicioTemporizador.setFocusable(false);
 
-        iniciadorCronometro = (FloatingActionButton) v.findViewById(R.id.tab_crono_iniciador);
+        iniciadorCronometro = v.findViewById(R.id.tab_crono_iniciador);
+        cargarDatos = v.findViewById(R.id.tab_crono_load_competencia);
 
-        listaArribos = (ListView) v.findViewById(R.id.tab_crono_list_arribos);
+        listaArribos = v.findViewById(R.id.tab_crono_list_arribos);
         dorsalAdapter = new DorsalAdapter(getActivity(), data.getArribos());
         listaArribos.setAdapter(dorsalAdapter);
 
-        cantidadArribos = (Button) v.findViewById(R.id.teclado_cant_arribos);
+        cantidadArribos = v.findViewById(R.id.teclado_cant_arribos);
 
-        inputDorsal = (EditText) v.findViewById(R.id.teclado_input_dorsal);
+        inputDorsal =  v.findViewById(R.id.teclado_input_dorsal);
         inputDorsal.setShowSoftInputOnFocus(false);
         inputDorsal.setInputType(InputType.TYPE_NULL);
         inputDorsal.setFocusable(false);
 
-        suprimir = (ImageView) v.findViewById(R.id.teclado_suprimir);
+        suprimir = v.findViewById(R.id.teclado_suprimir);
 
-        numero_0 = (Button) v.findViewById(R.id.teclado_numero_0);
-        numero_1 = (Button) v.findViewById(R.id.teclado_numero_1);
-        numero_2 = (Button) v.findViewById(R.id.teclado_numero_2);
-        numero_3 = (Button) v.findViewById(R.id.teclado_numero_3);
-        numero_4 = (Button) v.findViewById(R.id.teclado_numero_4);
-        numero_5 = (Button) v.findViewById(R.id.teclado_numero_5);
-        numero_6 = (Button) v.findViewById(R.id.teclado_numero_6);
-        numero_7 = (Button) v.findViewById(R.id.teclado_numero_7);
-        numero_8 = (Button) v.findViewById(R.id.teclado_numero_8);
-        numero_9 = (Button) v.findViewById(R.id.teclado_numero_9);
+        numero_0 = v.findViewById(R.id.teclado_numero_0);
+        numero_1 = v.findViewById(R.id.teclado_numero_1);
+        numero_2 = v.findViewById(R.id.teclado_numero_2);
+        numero_3 = v.findViewById(R.id.teclado_numero_3);
+        numero_4 = v.findViewById(R.id.teclado_numero_4);
+        numero_5 = v.findViewById(R.id.teclado_numero_5);
+        numero_6 = v.findViewById(R.id.teclado_numero_6);
+        numero_7 = v.findViewById(R.id.teclado_numero_7);
+        numero_8 = v.findViewById(R.id.teclado_numero_8);
+        numero_9 = v.findViewById(R.id.teclado_numero_9);
 
-        estadoAtleta = (Button) v.findViewById(R.id.teclado_estados);
-        ingresarArribo = (FloatingActionButton) v.findViewById(R.id.teclado_ingresar_arribo);
+        estadoAtleta =  v.findViewById(R.id.teclado_estados);
+        ingresarArribo = v.findViewById(R.id.teclado_ingresar_arribo);
 
         if(data.getInicioTemporizador() != null) {
             ingresarArribo.setEnabled(true);
@@ -156,14 +158,14 @@ public class TabCronometro extends Fragment {
             ingresarArribo.setEnabled(false);
             ingresarArribo.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorPrimaryAlpha)));
         }
-        descartarArribo = (Button) v.findViewById(R.id.teclado_descartar);
+        descartarArribo = v.findViewById(R.id.teclado_descartar);
 
         configAlertDialogView();
 
         configAcciones();
     }
 
-    public void configAcciones() {
+    private void configAcciones() {
 
         try {
 
@@ -242,7 +244,7 @@ public class TabCronometro extends Fragment {
                         final Date tiempoEvento = new Date();
 
                         configAlertDialogView();
-                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),R.style.CustomDialogTheme)
+                        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),R.style.CustomDialogTheme)
                             .setView(viewAlertDialogEstadoAtleta)
                             .setTitle(R.string.titulo_estado_atleta)
                             .setIcon(R.mipmap.ic_agregar_estado)
@@ -278,6 +280,41 @@ public class TabCronometro extends Fragment {
                     alert.setCancelable(false);
                     alert.show();
                     }
+                }
+            });
+
+
+            cargarDatos.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    CharSequence[] items = data.getNombresCompetencias();
+                    if(items.length == 0)
+                        items[0] = "No existen competencias";
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),R.style.CustomDialogTheme)
+                            .setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Toast.makeText(getActivity(),"Some actions maybe? Selected index: " + which, Toast.LENGTH_LONG);
+                                }
+                            })
+                            .setTitle(R.string.titulo_cargar_datos)
+                            .setPositiveButton("Ok", new DialogInterface.OnClickListener(){
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            })
+                            .setNegativeButton("Cancelar",new DialogInterface.OnClickListener(){
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+                    AlertDialog alert = builder.create();
+                    alert.setCanceledOnTouchOutside(false);
+                    alert.setCancelable(false);
+                    alert.show();
                 }
             });
 
@@ -375,8 +412,8 @@ public class TabCronometro extends Fragment {
     private void configAlertDialogView() {
         LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(getActivity().LAYOUT_INFLATER_SERVICE);
         viewAlertDialogEstadoAtleta = inflater.inflate(R.layout.alert_dialog_estado_atleta,null,false);
-        grupoEstadoAtleta = (RadioGroup) viewAlertDialogEstadoAtleta.findViewById(R.id.alert_dialog_estados);
-        comentarioEstadoAtleta = (EditText) viewAlertDialogEstadoAtleta.findViewById(R.id.alert_dialog_comentario);
+        grupoEstadoAtleta = viewAlertDialogEstadoAtleta.findViewById(R.id.alert_dialog_estados);
+        comentarioEstadoAtleta = viewAlertDialogEstadoAtleta.findViewById(R.id.alert_dialog_comentario);
     }
 
     private ArriboAtleta createArriboAtleta(String dorsal, String tiempo) {

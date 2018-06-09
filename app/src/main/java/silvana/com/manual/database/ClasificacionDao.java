@@ -30,4 +30,8 @@ public interface ClasificacionDao {
     @Delete
     void delete(Clasificacion c);
 
+
+    @Query("DELETE FROM clasificacion")
+    void deleteAll();
+
 }
